@@ -1,5 +1,5 @@
 /********************************************
-**********Подключение шрифтов****************
+*****************ADDING FONTS****************
 ********************************************/
 
 @font-face {
@@ -43,29 +43,80 @@
 }
 
 /********************************************
-*************Подготовление*******************
+*****************PREPARING*******************
 ********************************************/
 html, body, article, div.pageWrapper{
     height:100%;
 }
+
 body{
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: 'UzSans';
     font-weight: 700;
-}
-
-section.leftSide{
-    background-color: rgb(255, 195, 126);
-}
-
-section.middleSide{
-    background-color: rgb(130, 255, 126);
-}
-
-section.rightSide{
-    background-color: rgb(126, 167, 255);
+	color:rgb(255, 255, 255);
 }
 
 div{
-    border: 1px solid #000;
+    border: 1px solid rgb(255, 164, 164);
+}
+
+
+
+/********************************************
+***************LEFT SIDE*********************
+********************************************/
+section.leftSide{
+    background-color: #151728;
+	z-index:99;
+	padding: 0px;
+}
+
+section.leftSide header.leftLogo h1{
+	padding:25px 0px 15px 0px;
+	font-family: 'AVA';
+	text-align: center;
+	display: block;
+	font-weight: bold;
+	font-size: 1em;
+	letter-spacing: 5px;
+}
+
+
+/********************************************
+***************MIDDLE SIDE*******************
+********************************************/
+section.middleSide{
+	position:relative;
+	padding: 0px;
+	text-align: center;
+}
+
+section.middleSide div.middleWrapper{
+	position:absolute;
+	top:-5%;
+	right:-5%;
+	bottom:-5%;
+	left:-5%;
+	background-image:linear-gradient(to top, #24273b 20%, rgba(32, 32, 66, 0.8)), url(../images/fon.avif);
+	/* background-image: linear-gradient(to top, black, transparent); */
+	background-position: center center;
+	background-size: cover;
+	-webkit-filter: blur(15px);
+	-moz-filter: blur(15px);
+	-o-filter: blur(15px);
+	-ms-filter: blur(15px);
+	filter: blur(15px);
+}
+
+section.middleSide div.content{
+	position:relative;
+}
+
+/********************************************
+***************RIGHT SIDE********************
+********************************************/
+section.rightSide{
+	padding: 0px;
+    background-color: #151728;
+	z-index:99;
 }

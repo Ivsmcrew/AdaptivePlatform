@@ -1,0 +1,71 @@
+/********************************************
+**********Подключение шрифтов****************
+********************************************/
+
+@font-face {
+	font-family: 'ArabicRus';
+	src: url('../fonts/ArabicRus/arabicrus_0.eot');
+	src: url('../fonts/ArabicRus/arabicrus_0.woff') format('woff'), url('../fonts/ArabicRus/arabicrus_0.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'AVA';
+	src: url('../fonts/AVA/AVA.eot');
+	src: url('../fonts/AVA/AVA.woff') format('woff'), url('../fonts/AVA/AVA.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'UzSans';
+    src: url('../fonts/UzSans/UZSans-Light.eot');
+	src: url('../fonts/UzSans/UZSans-Light_1.woff') format('woff'), url('../fonts/UzSans/UZSans-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'UzSans';
+	src: url('../fonts/UzSans/UZSans-Regular.eot');
+	src: url('../fonts/UzSans/UZSans-Regular.woff') format('woff'), url('../fonts/UzSans/UZSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'UzSans';
+    src: url('../fonts/UzSans/UZSans-Bold.eot');
+    src: url('../fonts/UzSans/UZSans-Bold.woff') format('woff'), url('../fonts/UzSans/UZSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/********************************************
+*************Подготовление*******************
+********************************************/
+html, body, article, div.pageWrapper{
+    height:100%;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'UzSans';
+    font-weight: 700;
+}
+
+section.leftSide{
+    background-color: rgb(255, 195, 126);
+}
+
+section.middleSide{
+    background-color: rgb(130, 255, 126);
+}
+
+section.rightSide{
+    background-color: rgb(126, 167, 255);
+}
+
+div{
+    border: 1px solid #000;
+}

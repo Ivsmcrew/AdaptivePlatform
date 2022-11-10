@@ -45,7 +45,7 @@
 /********************************************
 *****************PREPARING*******************
 ********************************************/
-html, body, article, div.pageWrapper{
+html, body, div.pageWrapper, main{
     height:100%;
 }
 
@@ -81,6 +81,16 @@ section.leftSide header.leftLogo h1{
 	letter-spacing: 5px;
 }
 
+section.leftSide header.leftLogo h1 a{
+	text-decoration: none;
+	color:rgb(255, 255, 255);
+}
+
+section.leftSide header.leftLogo h1 a:hover{
+	text-decoration: none;
+	color:rgb(236, 199, 199);
+}
+
 
 /********************************************
 ***************MIDDLE SIDE*******************
@@ -108,7 +118,7 @@ section.middleSide div.middleWrapper{
 	filter: blur(15px);
 }
 
-section.middleSide div.content{
+section.middleSide main{
 	position:relative;
 }
 

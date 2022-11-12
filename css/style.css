@@ -50,17 +50,38 @@ html, body, div.pageWrapper, main{
 }
 
 body{
-    overflow: hidden;
     font-family: 'UzSans';
     font-weight: 700;
 	color:rgb(255, 255, 255);
 }
 
-div{
-    border: 1px solid rgb(255, 164, 164);
+.miniAvatar{
+	display: block;
+	width:80px;
+	height:80px;
+	border-radius: 50%;
+	background-image: url(../images/avatar.jpg);
+	background-position: center center;
+	background-size: cover;
 }
 
+.microAvatar{
+	display: block;
+	width:60px;
+	height:60px;
+	border-radius: 50%;
+	background-image: url(../images/avatar.jpg);
+	background-position: center center;
+	background-size: cover;
+}
 
+a.statusOnline{
+	display:block;
+	width:7px;
+	height:7px;
+	border-radius: 50%;
+	background-color: greenyellow;
+}
 
 /********************************************
 ***************LEFT SIDE*********************
@@ -120,6 +141,18 @@ section.middleSide div.middleWrapper{
 
 section.middleSide main{
 	position:relative;
+}
+
+div.avatarFrame{
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	margin:2px;
+	background-color: #151728;
+	background-image: url(../images/avatar.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /********************************************

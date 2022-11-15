@@ -75,14 +75,6 @@ body{
 	background-size: cover;
 }
 
-a.statusOnline{
-	display:block;
-	width:7px;
-	height:7px;
-	border-radius: 50%;
-	background-color: greenyellow;
-}
-
 /********************************************
 ***************LEFT SIDE*********************
 ********************************************/
@@ -162,4 +154,14 @@ section.rightSide{
 	padding: 0px;
     background-color: #151728;
 	z-index:99;
+}
+
+.downSideCrowdNav a.name:after{
+	content: '';
+	display:inline-block;
+	margin-left: 5px;
+	width:8px;
+	height:8px;
+	background-color: rgb(104, 240, 63);
+	border-radius: 50%;
 }

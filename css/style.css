@@ -1,7 +1,6 @@
 /********************************************
 *****************ADDING FONTS****************
 ********************************************/
-
 @font-face {
 	font-family: 'ArabicRus';
 	src: url('../fonts/ArabicRus/arabicrus_0.eot');
@@ -9,7 +8,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 @font-face {
 	font-family: 'AVA';
 	src: url('../fonts/AVA/AVA.eot');
@@ -17,7 +15,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 @font-face {
 	font-family: 'UzSans';
     src: url('../fonts/UzSans/UZSans-Light.eot');
@@ -25,7 +22,6 @@
 	font-weight: 300;
 	font-style: normal;
 }
-
 @font-face {
     font-family: 'UzSans';
 	src: url('../fonts/UzSans/UZSans-Regular.eot');
@@ -33,7 +29,6 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
 @font-face {
     font-family: 'UzSans';
     src: url('../fonts/UzSans/UZSans-Bold.eot');
@@ -45,16 +40,35 @@
 /********************************************
 *****************PREPARING*******************
 ********************************************/
-html, body, div.pageWrapper, main{
-    height:100%;
+:root{
+	--base-font: 'UzSans';
+	--base-logo-font: 'AVA';
+	--add-font: 'ArabicRus';
+	--base-color: rgb(255, 255, 255);
+	--add-color: #8a8b94;
+	--base-background-color: #151728;
+	--hover-color-one: rgb(236, 199, 199);
+	--hover-color-two: rgb(255, 255, 255);
 }
-
+*{
+	outline:none;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+body, div.pageWrapper{
+    height:100vh;
+}
 body{
-    font-family: 'UzSans';
+    font-family: var(--base-font);
     font-weight: 700;
-	color:rgb(255, 255, 255);
+	color: var(--base-color);
+	overflow-x: hidden;
+	overflow-y:hidden;
 }
-
 .miniAvatar{
 	display: block;
 	width:80px;
@@ -64,7 +78,6 @@ body{
 	background-position: center center;
 	background-size: cover;
 }
-
 .microAvatar{
 	display: block;
 	width:60px;
@@ -74,54 +87,92 @@ body{
 	background-position: center center;
 	background-size: cover;
 }
-
 /********************************************
 ***************LEFT SIDE*********************
 ********************************************/
 section.leftSide{
-    background-color: #151728;
+    background-color: var(--base-background-color);
+	color: var(--add-color);
 	z-index:99;
 	padding: 0px;
+	height:100%;
+	overflow-y: auto;
 }
-
+::-webkit-scrollbar{
+	width:0.5em;
+}
+::-webkit-scrollbar-track{
+	background-color: var(--base-background-color);
+}
+::-webkit-scrollbar-thumb{
+	background-color: var(--add-color);
+	border-radius: 0.2em;
+}
+.leftSide .leftNav img, .leftSide .leftFooter img{
+	margin-right: 0.5em;
+}
+.leftNav .upSideNav, .leftNav .downSideNav{
+	margin-top: 1.5em;
+}
+section.leftSide a{
+	display:block;
+	color: var(--add-color);
+	cursor: pointer;
+	transition-property: color;
+	transition-duration: 0.2s;
+}
+section.leftSide a:hover{
+	color: var(--hover-color-two);
+	text-decoration: none;
+}
 section.leftSide header.leftLogo h1{
 	padding:25px 0px 15px 0px;
-	font-family: 'AVA';
+	font-family: var(--base-logo-font);
 	text-align: center;
 	display: block;
 	font-weight: bold;
 	font-size: 1em;
 	letter-spacing: 5px;
 }
-
 section.leftSide header.leftLogo h1 a{
-	text-decoration: none;
-	color:rgb(255, 255, 255);
+	color:var(--base-color);
 }
-
 section.leftSide header.leftLogo h1 a:hover{
-	text-decoration: none;
-	color:rgb(236, 199, 199);
+	color:var(--hover-color-one);
 }
-
-
+.leftNav h3{
+	margin-left: 2rem;
+	margin-right: 0.5rem;
+	text-transform: uppercase;
+	font-size: 1.1em;
+}
+.leftSide .leftFooter{
+	margin:2rem 1rem 0 2rem;
+}
 /********************************************
 ***************MIDDLE SIDE*******************
 ********************************************/
 section.middleSide{
+	scroll-behavior: smooth;
 	position:relative;
 	padding: 0px;
 	text-align: center;
+	height: 100%;
+	color: var(--base-color);
 }
-
+section.middleSide a{
+	color: var(--add-color);
+}
+section.middleSide a:hover{
+	color: var(--hover-color-two);
+}
 section.middleSide div.middleWrapper{
-	position:absolute;
+	position:fixed;
 	top:-5%;
 	right:-5%;
 	bottom:-5%;
 	left:-5%;
-	background-image:linear-gradient(to top, #24273b 20%, rgba(32, 32, 66, 0.8)), url(../images/fon.avif);
-	/* background-image: linear-gradient(to top, black, transparent); */
+	background-image:linear-gradient(to top, #24273b 20%, rgba(99, 99, 117, 0.8)), url(../images/fon.png);
 	background-position: center center;
 	background-size: cover;
 	-webkit-filter: blur(15px);
@@ -130,32 +181,64 @@ section.middleSide div.middleWrapper{
 	-ms-filter: blur(15px);
 	filter: blur(15px);
 }
-
 section.middleSide main{
+	height:100%;
 	position:relative;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
-
+section.middleSide main nav input{
+	height:3em;
+	width: 100%;
+	color: var(--base-color);
+	background-image: url(../images/search.svg);
+	background-position:2%;
+	background-repeat: no-repeat;
+	background-color: var(--base-background-color);
+	border-color: var(--base-background-color);
+	border-left-color: var(--add-color);
+	padding-left: 4em
+}
+section.middleSide main header.headerOfMiddleSide{
+	position: relative;
+	height: 25em;
+	background-image: url(../images/fon.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: calc(0.2em + 0.9vw);
+	border-radius: calc(0.2em + 0.3vw);
+}
 div.avatarFrame{
-	height: 150px;
-	width: 150px;
+	position: absolute;
+	bottom:3em;
+	left:3em;
+	height: 200px;
+	width: 200px;
 	border-radius: 50%;
+	border:4px solid var(--base-background-color);
 	margin:2px;
-	background-color: #151728;
+	background-color: var(--base-background-color);
 	background-image: url(../images/avatar.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
 /********************************************
 ***************RIGHT SIDE********************
 ********************************************/
 section.rightSide{
 	padding: 0px;
-    background-color: #151728;
+    background-color: var(--base-background-color);
 	z-index:99;
+	height:100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	color: var(--add-color);
 }
-
+section.rightSide a{
+	color: var(--base-color);
+}
 .downSideCrowdNav a.name:after{
 	content: '';
 	display:inline-block;

@@ -47,7 +47,7 @@
 	--base-color: rgb(255, 255, 255);
 	--add-color: #8a8b94;
 	--base-background-color: #151728;
-	--hover-color-one: rgb(236, 199, 199);
+	--hover-color-one: rgb(226, 169, 169);
 	--hover-color-two: rgb(255, 255, 255);
 }
 *{
@@ -200,14 +200,63 @@ section.middleSide main nav input{
 	padding-left: 4em
 }
 section.middleSide main header.headerOfMiddleSide{
+	display:flex;
+	flex-direction: column;
 	position: relative;
-	height: 25em;
+	height: 23em;
 	background-image: url(../images/fon.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	margin: calc(0.2em + 0.9vw);
-	border-radius: calc(0.2em + 0.3vw);
+	margin: calc(0.2rem + 0.9vw);
+	margin-bottom: 1.8em;
+	border-radius: calc(0.2rem + 0.3vw);
+	box-shadow: 0 0 30px 50px rgba(221, 221, 241, 0.08) inset;
+}
+section.middleSide main header.headerOfMiddleSide p{
+	flex:4;
+	font-size: 30px;
+	font-weight: bolder;
+}
+section.middleSide main header.headerOfMiddleSide p span{
+	display: block;
+	position: absolute;
+	bottom: 8rem;
+	left:17.5rem;
+}
+section.middleSide main header.headerOfMiddleSide nav{
+	flex:1;
+	background-color: var(--base-background-color);
+	margin:0;
+	padding:0 0 0 250px;
+	border-bottom-left-radius: calc(0.2rem + 0.3vw);
+	border-bottom-right-radius: calc(0.2rem + 0.3vw);
+}
+header.headerOfMiddleSide nav ul{
+	display: flex;
+	padding: 0;
+	margin: 0;
+	width:450px;
+	justify-content: space-around;
+}
+header.headerOfMiddleSide nav ul li{
+	text-align: center;
+	height:100%;
+	width:100%;
+}
+header.headerOfMiddleSide nav ul li a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+	width:100%;
+	border: 4px solid transparent;
+	transition-property: background-color, border-bottom, color;
+	transition-duration: 0.4s;
+}
+header.headerOfMiddleSide nav ul li a:hover{
+	background-color: rgba(99, 99, 117, 0.2);
+	border-bottom: 4px solid rgb(118, 194, 245);
 }
 div.avatarFrame{
 	position: absolute;
@@ -224,6 +273,95 @@ div.avatarFrame{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.mainPart{
+	margin: calc(0.2rem + 0.9vw);
+	padding:0;
+}
+.mainPart .leftMainPart{
+	margin:0;
+	padding:0;
+	width:28rem;
+}
+.mainPart .leftMainPart .innerLeftBox{
+	margin-bottom:1.8em;
+	padding:1.5rem 1.5rem;
+	border-radius: calc(0.2rem + 0.3vw);
+	background-color: var(--base-background-color);
+}
+	/* первый левый бокс */
+	.mainPart .leftMainPart .first{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: left;
+	}
+	.mainPart .leftMainPart .first h3{
+		flex:0 0 50px;
+		color: var(--add-color);
+		font-weight: bold;
+	}
+	.mainPart .leftMainPart .first button{
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		background-color: transparent;
+		border:none;
+	}
+	.mainPart .leftMainPart .first button img{
+		width:40px;
+	}
+	.mainPart .leftMainPart .first ul{
+		flex:0 0 300px;
+		padding:0;
+		margin:0;
+		text-align: left;
+	}
+	.mainPart .leftMainPart .first ul li{
+		display: flex;
+		align-items: center;
+		padding:0.2rem;
+	}
+	.mainPart .leftMainPart .first ul li img{
+		margin-right: 0.7rem;
+	}
+
+	/* второй левый бокс */
+	.mainPart .leftMainPart .second{
+		padding:0.8rem;
+		position: relative;
+	}
+	.mainPart .leftMainPart .second figure{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: left;
+	}
+	.mainPart .leftMainPart .second .currentDay{
+		display: flex;
+		flex-direction: column;
+		position:absolute;
+		top:50px;
+		left:50px;
+		width:100px;
+		height:100px;
+	}
+	.currentDay .month, .currentDay .day{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding:0;
+		margin:0;
+		flex:1;
+	}
+	.currentDay .day{
+		background-color: rgba(186, 207, 221, 0.4);
+		font-size: 1.8em;
+		filter:blur(7px);
+	}
+	.currentDay .month{
+		background-color: rgb(70, 152, 206);
+		font-size: 1.5em;
+	}
+	/* третий левый бокс */
 /********************************************
 ***************RIGHT SIDE********************
 ********************************************/

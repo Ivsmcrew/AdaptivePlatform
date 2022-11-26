@@ -81,17 +81,18 @@ body{
 }
 .miniAvatar{
 	display: block;
-	width:80px;
-	height:80px;
+	width:70px;
+	height:70px;
 	border-radius: 50%;
 	background-image: url(../images/avatar.jpg);
 	background-position: center center;
 	background-size: cover;
+	margin: 0rem 1.2rem 0rem 0rem;
 }
 .microAvatar{
 	display: block;
-	width:60px;
-	height:60px;
+	width:70px;
+	height:70px;
 	border-radius: 50%;
 	background-image: url(../images/avatar.jpg);
 	background-position: center center;
@@ -153,7 +154,6 @@ section.leftSide header.leftLogo h1 a:hover{
 ***************MIDDLE SIDE*******************
 ********************************************/
 section.middleSide{
-	scroll-behavior: smooth;
 	position:relative;
 	padding: 0px;
 	text-align: center;
@@ -274,94 +274,172 @@ div.avatarFrame{
 	background-size: cover;
 }
 .mainPart{
+	display: flex;
+	flex-wrap: nowrap;
 	margin: calc(0.2rem + 0.9vw);
 	padding:0;
 }
-.mainPart .leftMainPart{
-	margin:0;
-	padding:0;
-	width:28rem;
-}
-.mainPart .leftMainPart .innerLeftBox{
-	margin-bottom:1.8em;
-	padding:1.5rem 1.5rem;
-	border-radius: calc(0.2rem + 0.3vw);
-	background-color: var(--base-background-color);
-}
-	/* первый левый бокс */
-	.mainPart .leftMainPart .first{
-		display:flex;
-		flex-wrap: wrap;
-		justify-content: left;
-	}
-	.mainPart .leftMainPart .first h3{
-		flex:0 0 50px;
-		color: var(--add-color);
-		font-weight: bold;
-	}
-	.mainPart .leftMainPart .first button{
-		display: flex;
-		align-items: center;
-		margin-left: auto;
-		background-color: transparent;
-		border:none;
-	}
-	.mainPart .leftMainPart .first button img{
-		width:40px;
-	}
-	.mainPart .leftMainPart .first ul{
-		flex:0 0 300px;
-		padding:0;
+	/*левая часть мейн мидла*/
+	.mainPart .leftMainPart{
 		margin:0;
-		text-align: left;
+		padding:0;
+		flex:0 0 28rem;
 	}
-	.mainPart .leftMainPart .first ul li{
-		display: flex;
-		align-items: center;
-		padding:0.2rem;
+	.mainPart .leftMainPart .innerLeftBox{
+		margin-bottom:1.8em;
+		padding:1.5rem 1.5rem;
+		border-radius: calc(0.2rem + 0.3vw);
+		background-color: var(--base-background-color);
 	}
-	.mainPart .leftMainPart .first ul li img{
-		margin-right: 0.7rem;
-	}
+		/* первый левый бокс */
+		.mainPart .leftMainPart .first{
+			display:flex;
+			flex-wrap: wrap;
+			justify-content: left;
+		}
+		.mainPart .leftMainPart .first h3{
+			flex:0 0 50px;
+			color: var(--add-color);
+			font-weight: bold;
+		}
+		.mainPart .leftMainPart .first button{
+			display: flex;
+			align-items: center;
+			margin-left: auto;
+			background-color: transparent;
+			border:none;
+		}
+		.mainPart .leftMainPart .first button img{
+			width:40px;
+		}
+		.mainPart .leftMainPart .first ul{
+			flex:0 0 300px;
+			padding:0;
+			margin:0;
+			text-align: left;
+		}
+		.mainPart .leftMainPart .first ul li{
+			display: flex;
+			align-items: center;
+			padding:0.2rem;
+		}
+		.mainPart .leftMainPart .first ul li img{
+			margin-right: 0.7rem;
+		}
 
-	/* второй левый бокс */
-	.mainPart .leftMainPart .second{
-		padding:0.8rem;
-		position: relative;
-	}
-	.mainPart .leftMainPart .second figure{
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: left;
-	}
-	.mainPart .leftMainPart .second .currentDay{
-		display: flex;
-		flex-direction: column;
-		position:absolute;
-		top:50px;
-		left:50px;
-		width:100px;
-		height:100px;
-	}
-	.currentDay .month, .currentDay .day{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding:0;
+		/* второй левый бокс */
+		.mainPart .leftMainPart .second{
+			padding:0.8rem;
+			position: relative;
+		}
+		.mainPart .leftMainPart .second figure{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: left;
+			margin:0;
+		}
+		.mainPart .leftMainPart .second figure figcaption{
+			text-align: left;
+			margin-left: 1rem;
+			font-size: 1.3rem;
+		}
+		.mainPart .leftMainPart .second figure figcaption time{
+			font-size: 1rem;
+			color: var(--add-color);
+		}
+		.mainPart .leftMainPart .second .currentDay{
+			display: flex;
+			flex-direction: column;
+			position:absolute;
+			top:50px;
+			left:50px;
+			width:100px;
+			height:100px;
+		}
+		.currentDay .month, .currentDay .day{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding:0;
+			margin:0;
+			flex:1;
+		}
+		.currentDay .day{
+			background-color: rgba(186, 207, 221, 0.4);
+			font-size: 1.8em;
+			backdrop-filter:blur(5px);
+		}
+		.currentDay .month{
+			background-color: rgb(70, 152, 206);
+			font-size: 1.5em;
+		}
+		/* третий левый бокс */
+		.mainPart .leftMainPart .third{
+			display:flex;
+			flex-wrap: wrap;
+			justify-content: left;
+		}
+		.mainPart .leftMainPart .third h3{
+			flex:0 0 250px;
+			color: var(--add-color);
+			text-align: left;
+			font-weight: bold;
+		}
+		.mainPart .leftMainPart .third button{
+			display: flex;
+			align-items: center;
+			margin-left: auto;
+			background-color: transparent;
+			border:none;
+		}
+		.mainPart .leftMainPart .third button img{
+			width:40px;
+		}
+		.mainPart .leftMainPart .third ul{
+			flex:0 0 300px;
+			padding:0;
+			margin:0;
+			text-align: left;
+		}
+		.mainPart .leftMainPart .third ul li{
+			display: flex;
+			align-items: center;
+			padding:0.2rem;
+			margin-top: 0.6rem;
+			font-size: 1.3em;
+		}
+
+	/* правая часть мейн мидла */
+	.mainPart .rightMainPart{
 		margin:0;
-		flex:1;
+		padding:0;
+		flex:1 1 10%;
 	}
-	.currentDay .day{
-		background-color: rgba(186, 207, 221, 0.4);
-		font-size: 1.8em;
-		filter:blur(7px);
+	.mainPart .rightMainPart .innerRightBox{
+		margin-left:1.8em;
+		margin-bottom:1.8em;
+		padding:1.5rem 1.5rem;
+		border-radius: calc(0.2rem + 0.3vw);
+		background-color: var(--base-background-color);
 	}
-	.currentDay .month{
-		background-color: rgb(70, 152, 206);
-		font-size: 1.5em;
-	}
-	/* третий левый бокс */
+		/* первый правый бокс */
+		/* второй правый бокс */
+		.innerRightBox .photos{
+			height:100px;
+		}
+		.innerRightBox .photos .left, .innerRightBox .photos .right{
+			height:100%;
+		}
+		.innerRightBox .photos .left img{
+			height:100%;
+
+		}
+		.innerRightBox .photos .right img{
+			height:50%;
+		}
+		
+		
 /********************************************
 ***************RIGHT SIDE********************
 ********************************************/

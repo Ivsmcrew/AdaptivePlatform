@@ -281,7 +281,6 @@ div.avatarFrame{
 }
 .mainPart{
 	display: flex;
-	flex-wrap: nowrap;
 	margin: calc(0.2rem + 0.9vw);
 	padding:0;
 }
@@ -289,7 +288,7 @@ div.avatarFrame{
 	.mainPart .leftMainPart{
 		margin:0;
 		padding:0;
-		flex:0 0 28rem;
+		flex:0 0 24rem;
 	}
 	.mainPart .leftMainPart .innerLeftBox{
 		margin-bottom:1.8em;
@@ -420,7 +419,7 @@ div.avatarFrame{
 	.mainPart .rightMainPart{
 		margin:0;
 		padding:0;
-		flex:1 1 10%;
+		flex:1 1;
 	}
 	.mainPart .rightMainPart .innerRightBox{
 		margin-left:1.8em;
@@ -430,22 +429,119 @@ div.avatarFrame{
 		background-color: var(--base-background-color);
 	}
 		/* первый правый бокс */
-		/* второй правый бокс */
-		.innerRightBox .photos{
-			height:100px;
+		div.rightMainPart .upperRightBox{
+			padding-bottom: 0px !important;
 		}
-		.innerRightBox .photos .left, .innerRightBox .photos .right{
-			height:100%;
-		}
-		.innerRightBox .photos .left img{
-			height:100%;
+		.upperRightBox nav ul{
+			margin:0;
+			padding:0;
+			display: flex;
+			justify-items:start;
 
 		}
-		.innerRightBox .photos .right img{
-			height:50%;
+		.upperRightBox nav ul li{
+			display: inline-block;
 		}
-		
-		
+		.upperRightBox nav ul li a{
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			background-color:#32333d;
+			padding: 0.2em 0.8em;
+			margin-right:0.8em;
+			border-radius: 1em;
+			transition-property: background-color;
+			transition-duration: 0.2s;
+		}
+		.upperRightBox nav ul li a:hover{
+			background-color: var(--add-color);
+		}
+		.upperRightBox form{
+			display: flex;
+			align-items: center;
+			margin: 1em 0;
+		}
+		.upperRightBox > form::before{
+			content: '';
+			display:inline-block;
+			border-radius: 50%;
+			width:60px;
+			height:60px;
+			background-image: url(../images/avatar.jpg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			margin-right: 1em;
+		}
+		.upperRightBox > form input{
+			flex:1;
+			align-self: stretch;
+			background-color: transparent;
+			border-color: transparent;
+		}
+		.upperRightBox .optionalBar{
+			border-top: 1px solid rgba(221, 221, 241, 0.08);
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.upperRightBox .optionalBar ul{
+			display: flex;
+			justify-self: start;
+			align-self: center;
+			padding:0;
+			margin:0;
+		}
+		.upperRightBox .optionalBar ul li button{
+			display: flex;
+			align-items: center;
+			margin-right: 5px;
+			color:var(--add-color);
+		}
+		.upperRightBox .optionalBar ul li button img{
+			margin-right: 5px;
+		}
+		.upperRightBox .optionalBar form{
+			margin-left: auto;
+		}
+		.upperRightBox .optionalBar form button{
+			background-color: rgb(45, 127, 182);
+			border-radius: 0.3em;
+			padding:0.5em 1.3em;
+			color:white;
+			box-shadow: 0 0 17px rgba(127, 203, 253, 0.8);
+			text-shadow: 0 0 5px white;
+		}
+		/* второй правый бокс */
+		.lowerRightBox header{
+			display: flex;
+		}
+		.lowerRightBox header figure{
+			padding:1.5em 0 0 0;
+			margin:0;
+			line-height: 0.2em;
+			text-align: left;
+			font-size: 1em;
+		}
+		.lowerRightBox header figure p + p{
+			color:var(--add-color);
+			font-size: 0.8em;
+		}
+		.lowerRightBox header button{
+			display: flex;
+			align-items: center;
+			margin-left: auto;
+			background-color: transparent;
+			border:none;
+		}
+		.lowerRightBox header button img{
+			width: 40px;
+		}
+		.lowerRightBox p{
+			margin-top: 1em;
+			text-align: left;
+			font-size: 0.8em;
+		}
+	
 /********************************************
 ***************RIGHT SIDE********************
 ********************************************/

@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/style.css"></link>
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
     <title>Adaptiv | Platform</title>
 </head>
 <body class="container-fluid">
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
     <div class="pageWrapper row">
         <!------------------------------------------
         --------------------------------------------
         --------------LEFT PAGE-PART----------------
         --------------------------------------------
         --------------------------------------------> 
-        <section class="leftSide col-lg-2 col-md-3 col-1">
+        <section data-simplebar class="leftSide col-lg-2 col-md-3 col-1">
             <header class="leftLogo">
                 <h1><a href="#"><strong>ultranet</strong></a></h1>
             </header>
@@ -61,9 +64,9 @@
         --------------------------------------------
         --------------------------------------------> 
         <section class="middleSide col-lg-8 col-md-9 col-11">
-            <div class="middleWrapper"></div>
+            <div class="middleWrapper"></div> 
 
-            <main>
+            <main data-simplebar>
                 <nav class="searchString">
                     <form action="#" method="POST">
                         <input type="text" name="search" placeholder="Search" aria-label="Main search string">
@@ -71,7 +74,7 @@
                 </nav>
 
                 <header class="headerOfMiddleSide">
-                    <p class="nickname">Valerchik Perchik</p>
+                    <p class="nickname"><span>Valerchik Perchik</span></p>
                     <nav class="row middleNav">
                         <ul>
                             <li><a href="#">Timeline</a></li>
@@ -86,17 +89,17 @@
 
                 <div class="mainPart row">
                     <div class="col-4 leftMainPart">
-                        <div class="upperLeftBox">        
+                        <div class="innerLeftBox first">        
                             <h3>Introduction</h3>
                             <button><img src="images/three-dots.svg" alt="button three points" name="optionalButtonPoints" aria-label="options in Intro box"></button>
                             <ul>
-                                <li><img src="images/briefcase-fill.svg" alt="Home">Product designer at <a href="/">Valeryy</a></li>
-                                <li><img src="images/house-door.svg" alt="Home">Live in <a href="/">Seint-Petersburg</a></li>
-                                <li><img src="images/fan.svg" alt="Home">Player name <a href="/">IVSM</a></li>
+                                <li><img src="images/briefcase-fill.svg" alt="Home">Product designer at &nbsp;<a href="/">Valeryy</a></li>
+                                <li><img src="images/house-door.svg" alt="Home">Live in &nbsp;<a href="/">Seint-Petersburg</a></li>
+                                <li><img src="images/fan.svg" alt="Home">Player name &nbsp;<a href="/">IVSM</a></li>
                             </ul>
                         </div>
 
-                        <div class="middleLeftBox">
+                        <div class="innerLeftBox second">
                             <figure>
                                 <p><img src="images/neon1.jpg" alt="fon of event box" width="100%"></p>
                                 <figcaption>Winter wonderland</figcaption>
@@ -108,7 +111,7 @@
                             </div>
                         </div>
 
-                        <div class="lowerLeftBox">
+                        <div class="innerLeftBox third">
                             <h3>Your pages</h3>
                             <button><img src="images/three-dots.svg" alt="button three points" name="optionalButtonPoints" aria-label="Options in Your pages box"></button>
                             <ul>
@@ -129,7 +132,7 @@
                     </div>
 
                     <div class="col-8 rightMainPart">
-                        <div class="upperRightBox"> 
+                        <div class="upperRightBox innerRightBox"> 
                             <nav class="StatusPhotosVideosNav">
                                 <ul>
                                     <li><a href="#">Status</a></li>
@@ -155,7 +158,7 @@
                             </div>                           
                         </div>
 
-                        <div class="lowerRightBox">
+                        <div class="lowerRightBox innerRightBox">
                             <header class="headerOfLowerRightBox">
                                 <div class="miniAvatar"></div>
 
@@ -170,11 +173,11 @@
                             <p class="comment">Understanding is but the sum of our misunderstandings</p>
 
                             <div class="row photos">
-                                <div class="col-6">
+                                <div class="col-6 left">
                                     <img src="images/neon2.jpg" alt="photo №1">
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-6 right">
                                     <img src="images/neon3.jpg" alt="photo №2">
                                     <img src="images/neon5.jpg" alt="photo №3">
                                 </div>
@@ -188,7 +191,8 @@
                         </div>
                     </div>
                 </div>
-            </main>    
+            </main>  
+             
         </section>
 
         <!------------------------------------------
@@ -196,7 +200,7 @@
         -----------RIGHT PAGE-PART------------------
         --------------------------------------------
         -------------------------------------------->
-        <section class="rightSide col-lg-2 d-none d-lg-block">
+        <section data-simplebar class="rightSide col-lg-2 d-none d-lg-block">
             <header class="instrumentBar"> 
                 <button><img src="images/envelope.svg" alt="post picture"></button>       
                 <button><img src="images/bell.svg" alt="notifications picture"></button>

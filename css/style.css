@@ -93,8 +93,8 @@ body{
 }
 .microAvatar{
 	display: block;
-	width:70px;
-	height:70px;
+	width:50px;
+	height:50px;
 	border-radius: 50%;
 	background-image: url(../images/avatar.jpg);
 	background-position: center center;
@@ -133,6 +133,12 @@ section.leftSide a{
 section.leftSide a:hover{
 	color: var(--hover-color-two);
 	text-decoration: none;
+}
+section.leftSide header.leftLogo{
+	position: sticky;
+	top:0;
+	background-color: var(--base-background-color);
+	box-shadow:0 15px 15px var(--base-background-color) ;
 }
 section.leftSide header.leftLogo h1{
 	padding:25px 0px 15px 0px;
@@ -194,6 +200,11 @@ section.middleSide main{
 	position:relative;
 	overflow-x: hidden;
 	overflow-y: auto;
+}
+section.middleSide main nav.searchString{
+	position: sticky;
+	top:0;
+	z-index: 3;
 }
 section.middleSide main nav input{
 	height:3em;
@@ -268,6 +279,7 @@ header.headerOfMiddleSide nav ul li a:hover{
 }
 div.avatarFrame{
 	position: absolute;
+	z-index: 2;
 	bottom:3em;
 	left:3em;
 	height: 200px;
@@ -606,6 +618,33 @@ section.rightSide{
 	overflow-x: hidden;
 	overflow-y: auto;
 	color: var(--add-color);
+}
+section.rightSide header{
+	display: flex;
+	padding:2em 0em 2em 3em;
+	position: sticky;
+	top:0;
+	background-color: var(--base-background-color);
+	box-shadow:0 15px 15px var(--base-background-color) ;
+}
+section.rightSide header button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin-right: 3em;
+	flex:0 0 2em;
+	color:var(--add-color);
+}
+section.rightSide header button img{
+	width:2em;
+}
+section.rightSide header button.name{
+	margin-left: auto;
+	margin-right: 1em;
+	flex:1 0 2em;
+	font-size: 1.5em;
+	font-weight: 900;
 }
 section.rightSide a{
 	color: var(--base-color);

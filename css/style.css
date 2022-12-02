@@ -73,6 +73,7 @@ body, div.pageWrapper{
     height:100vh;
 	max-width:2700px;
 	background-color: #373e57;
+	margin: 0 auto;
 }
 body{
     font-family: var(--base-font);
@@ -100,11 +101,25 @@ body{
 	background-position: center center;
 	background-size: cover;
 }
-
 button{
 	background: none;
 	border:none;
+	cursor: pointer;
 }
+
+.pageWrapper{
+	display:flex; 
+}
+.pageWrapper section.leftSide{
+	flex:2;
+}
+.pageWrapper section.middleSide{
+	flex:8;
+}
+.pageWrapper section.rightSide{
+	flex:2;
+}
+
 
 /********************************************
 ***************LEFT SIDE*********************
@@ -135,13 +150,18 @@ section.leftSide a:hover{
 	text-decoration: none;
 }
 section.leftSide header.leftLogo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: sticky;
 	top:0;
+	height:114px;
 	background-color: var(--base-background-color);
 	box-shadow:0 15px 15px var(--base-background-color) ;
 }
 section.leftSide header.leftLogo h1{
-	padding:25px 0px 15px 0px;
+	padding:0;
+	margin:0;
 	font-family: var(--base-logo-font);
 	text-align: center;
 	display: block;
@@ -253,6 +273,7 @@ section.middleSide main header.headerOfMiddleSide nav{
 }
 header.headerOfMiddleSide nav ul{
 	display: flex;
+	height:100%;
 	padding: 0;
 	margin: 0;
 	width:450px;
@@ -260,14 +281,13 @@ header.headerOfMiddleSide nav ul{
 }
 header.headerOfMiddleSide nav ul li{
 	text-align: center;
-	height:100%;
 	width:100%;
 }
 header.headerOfMiddleSide nav ul li a{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height:100%;
+	height:85%;
 	width:100%;
 	border: 4px solid transparent;
 	transition-property: background-color, border-bottom, color;
@@ -611,6 +631,7 @@ div.avatarFrame{
 ***************RIGHT SIDE********************
 ********************************************/
 section.rightSide{
+	flex-wrap: wrap;
 	padding: 0px;
     background-color: var(--base-background-color);
 	z-index:99;
@@ -620,7 +641,9 @@ section.rightSide{
 	color: var(--add-color);
 }
 section.rightSide header{
+	flex:1 1 100%;
 	display: flex;
+	flex-wrap: wrap;
 	padding:2em 0em 2em 3em;
 	position: sticky;
 	top:0;
@@ -628,7 +651,6 @@ section.rightSide header{
 	box-shadow:0 15px 15px var(--base-background-color) ;
 }
 section.rightSide header button{
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0;
@@ -646,15 +668,51 @@ section.rightSide header button.name{
 	font-size: 1.5em;
 	font-weight: 900;
 }
+section.rightSide h3{
+	margin-left: 2rem;
+	margin-right: 0.5rem;
+	text-transform: uppercase;
+	font-size: 1.1em;
+}
+section.rightSide ul li{
+	display: flex;
+	align-items: center;
+	margin:1em 0;
+}
 section.rightSide a{
 	color: var(--base-color);
 }
 .downSideCrowdNav a.name:after{
 	content: '';
 	display:inline-block;
-	margin-left: 5px;
+	margin-left: 10px;
 	width:8px;
 	height:8px;
 	background-color: rgb(104, 240, 63);
 	border-radius: 50%;
+}
+section.rightSide footer{
+	display: flex;
+	flex-wrap: wrap;
+	position: sticky;
+	bottom:0;
+	padding:0.5em 1em;
+	border-top: 1px solid var(--add-color);
+	background-color: var(--base-background-color);
+}
+section.rightSide footer form{
+	display: flex;
+	margin-left: 2em;
+}
+section.rightSide footer form input{
+	border:none;
+	background-color: transparent;
+	color:var(--add-color);
+	padding-left: 1em;
+}
+section.rightSide footer button{
+	margin-left: 1em;
+}
+section.rightSide footer button.wheel-image{
+	margin-left: auto;
 }

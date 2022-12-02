@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <title>Adaptiv | Platform</title>
 </head>
-<body class="container-fluid">
+<body>
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 
-    <div class="pageWrapper row">
+    <div class="pageWrapper">
         <!------------------------------------------
         --------------------------------------------
         --------------LEFT PAGE-PART----------------
         --------------------------------------------
         --------------------------------------------> 
-        <section data-simplebar class="leftSide col-lg-2 col-md-3 col-1">
+        <section data-simplebar class="leftSide">
             <header class="leftLogo">
                 <h1><a href="#"><strong>ultranet</strong></a></h1>
             </header>
@@ -63,7 +62,7 @@
         -----------MIDDLE PAGE-PART-----------------
         --------------------------------------------
         --------------------------------------------> 
-        <section class="middleSide col-lg-8 col-md-9 col-11">
+        <section class="middleSide">
             <div class="middleWrapper"></div> 
 
             <main data-simplebar>
@@ -75,7 +74,7 @@
 
                 <header class="headerOfMiddleSide">
                     <p class="nickname"><span>Valerchik Perchik</span></p>
-                    <nav class="row middleNav">
+                    <nav class="middleNav">
                         <ul>
                             <li><a href="#">Timeline</a></li>
                             <li><a href="#">About</a></li>
@@ -87,7 +86,7 @@
                     <div class="avatarFrame"></div>
                 </header>
 
-                <div class="mainPart row">
+                <div class="mainPart">
                     <div class="leftMainPart">
                         <div class="innerLeftBox first">        
                             <h3>Introduction</h3>
@@ -195,7 +194,7 @@
         -----------RIGHT PAGE-PART------------------
         --------------------------------------------
         -------------------------------------------->
-        <section data-simplebar class="rightSide col-lg-2 d-none d-lg-block">
+        <section data-simplebar class="rightSide">
             <header class="instrumentBar"> 
                 <button class="mail"><img src="images/envelope.svg" alt="post picture"></button>       
                 <button class="ring"><img src="images/bell.svg" alt="notifications picture"></button>
@@ -247,13 +246,13 @@
                 </ul>
             </nav>
 
-            <footer class="instrumentBar row">
+            <footer class="instrumentBar">
                     <form action="#" method="POST">
                         <img src="images/search.svg" alt="search image">
                         <input type="text" name="search" placeholder="Search">
                     </form>
 
-                    <button><img src="images/gear.svg" alt="wheel image"></button>
+                    <button class="wheel-image"><img src="images/gear.svg" alt="wheel image"></button>
                     <button><img src="images/pencil.svg" alt="pen image"></button>
                     <button><img src="images/plus.svg" alt="plus image"></button>
             </footer>

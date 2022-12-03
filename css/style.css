@@ -49,6 +49,8 @@
 	--base-background-color: #151728;
 	--hover-color-one: rgb(226, 169, 169);
 	--hover-color-two: rgb(255, 255, 255);
+	box-sizing: border-box;
+	font-size: calc(0.5vw + 0.4em);
 }
 ::-webkit-scrollbar{
 	width:0.5em;
@@ -84,18 +86,18 @@ body{
 }
 .miniAvatar{
 	display: block;
-	width:70px;
-	height:70px;
+	width:55px;
+	height:55px;
 	border-radius: 50%;
 	background-image: url(../images/avatar.jpg);
 	background-position: center center;
 	background-size: cover;
-	margin: 0rem 1.2rem 0rem 0rem;
+	margin: 0em 1em 0em 0em;
 }
 .microAvatar{
 	display: block;
-	width:50px;
-	height:50px;
+	width:38px;
+	height:38px;
 	border-radius: 50%;
 	background-image: url(../images/avatar.jpg);
 	background-position: center center;
@@ -111,13 +113,13 @@ button{
 	display:flex; 
 }
 .pageWrapper section.leftSide{
-	flex:2;
+	flex:0 0 270px;
 }
 .pageWrapper section.middleSide{
-	flex:8;
+	flex:1 1 10px;
 }
 .pageWrapper section.rightSide{
-	flex:2;
+	flex:0 0 270px;
 }
 
 
@@ -125,6 +127,7 @@ button{
 ***************LEFT SIDE*********************
 ********************************************/
 section.leftSide{
+	position: relative;
     background-color: var(--base-background-color);
 	color: var(--add-color);
 	z-index:99;
@@ -132,11 +135,21 @@ section.leftSide{
 	height:100%;
 	overflow-y: auto;
 }
-.leftSide .leftNav img, .leftSide .leftFooter img{
-	margin-right: 0.5em;
+.leftSide .leftNav{
+	padding-left: 3em;
+	margin-bottom: 5em;
 }
-.leftNav .upSideNav, .leftNav .downSideNav{
-	margin-top: 1.5em;
+.leftSide .leftNav ul{
+	padding-left: 0;
+}
+.leftSide .leftNav ul li + li{
+	margin-top: 0.7em;
+}
+.leftSide .leftNav img{
+	margin-right: 1em;
+}
+.leftNav .downSideNav{
+	margin-top:3em;
 }
 section.leftSide a{
 	display:block;
@@ -155,7 +168,8 @@ section.leftSide header.leftLogo{
 	justify-content: center;
 	position: sticky;
 	top:0;
-	height:114px;
+	height:4em;
+	margin-top: 1em;
 	background-color: var(--base-background-color);
 	box-shadow:0 15px 15px var(--base-background-color) ;
 }
@@ -166,8 +180,8 @@ section.leftSide header.leftLogo h1{
 	text-align: center;
 	display: block;
 	font-weight: bold;
-	font-size: 1em;
-	letter-spacing: 5px;
+	font-size: 1.2em;
+	letter-spacing: 0.3em;
 }
 section.leftSide header.leftLogo h1 a{
 	color:var(--base-color);
@@ -176,13 +190,25 @@ section.leftSide header.leftLogo h1 a:hover{
 	color:var(--hover-color-one);
 }
 .leftNav h3{
-	margin-left: 2rem;
 	margin-right: 0.5rem;
 	text-transform: uppercase;
 	font-size: 1.1em;
 }
 .leftSide .leftFooter{
-	margin:2rem 1rem 0 2rem;
+	box-sizing: border-box;
+	position: fixed;
+	width: 270px;
+	bottom: 0;
+	padding:0.2em 1em 0 1.5em;
+	background-color: var(--base-background-color);
+	border-top: 1px solid var(--add-color);
+}
+.leftSide .leftFooter img{
+	margin-right: 0.7em;
+}
+.leftSide .leftFooter address p a{
+	display: flex;
+	align-items: center;
 }
 /********************************************
 ***************MIDDLE SIDE*******************
@@ -238,45 +264,63 @@ section.middleSide main nav input{
 	border-left-color: var(--add-color);
 	padding-left: 4em
 }
+section.middleSide main nav div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top:0;
+	right:0;
+	background-color: #21233a;
+	height:100%;
+	width:5em;
+}
+section.middleSide main nav div button{
+	height:100%;
+	width: 100%;
+}
+section.middleSide main nav div button img{
+	width:2em;
+}
 section.middleSide main header.headerOfMiddleSide{
 	display:flex;
 	flex-direction: column;
 	position: relative;
-	height: 23em;
+	height: 21em;
 	background-image: url(../images/fon.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	margin: calc(0.2rem + 0.9vw);
+	margin: calc(0.2rem + 0.8vw);
 	margin-bottom: 1.8em;
 	border-radius: calc(0.2rem + 0.3vw);
 	box-shadow: 0 0 30px 50px rgba(221, 221, 241, 0.08) inset;
 }
 section.middleSide main header.headerOfMiddleSide p{
-	flex:4;
-	font-size: 30px;
+	flex:3;
+	font-size: 1.8em;
 	font-weight: bolder;
 }
 section.middleSide main header.headerOfMiddleSide p span{
 	display: block;
 	position: absolute;
 	bottom: 8rem;
-	left:17.5rem;
+	left:17rem;
 }
 section.middleSide main header.headerOfMiddleSide nav{
 	flex:1;
 	background-color: var(--base-background-color);
 	margin:0;
-	padding:0 0 0 250px;
-	border-bottom-left-radius: calc(0.2rem + 0.3vw);
-	border-bottom-right-radius: calc(0.2rem + 0.3vw);
+	padding:0 0 0 20%;
+	border-bottom-left-radius: calc(0.2em + 0.3vw);
+	border-bottom-right-radius: calc(0.2em + 0.3vw);
 }
 header.headerOfMiddleSide nav ul{
 	display: flex;
 	height:100%;
 	padding: 0;
 	margin: 0;
-	width:450px;
+	width:30em;
 	justify-content: space-around;
 }
 header.headerOfMiddleSide nav ul li{
@@ -287,7 +331,7 @@ header.headerOfMiddleSide nav ul li a{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height:85%;
+	height:87%;
 	width:100%;
 	border: 4px solid transparent;
 	transition-property: background-color, border-bottom, color;
@@ -302,8 +346,8 @@ div.avatarFrame{
 	z-index: 2;
 	bottom:3em;
 	left:3em;
-	height: 200px;
-	width: 200px;
+	height: 11em;
+	width: 11em;
 	border-radius: 50%;
 	border:4px solid var(--base-background-color);
 	margin:2px;
@@ -315,7 +359,7 @@ div.avatarFrame{
 }
 .mainPart{
 	display: flex;
-	margin: calc(0.2rem + 0.9vw);
+	margin: calc(0.2rem + 0.8vw);
 	padding:0;
 }
 	/*левая часть мейн мидла*/
@@ -326,7 +370,7 @@ div.avatarFrame{
 	}
 	.mainPart .leftMainPart .innerLeftBox{
 		margin-bottom:1.8em;
-		padding:1.5rem 1.5rem;
+		padding:0.8em 1.5em 1.5em 1.5em;
 		border-radius: calc(0.2rem + 0.3vw);
 		background-color: var(--base-background-color);
 	}
@@ -337,7 +381,8 @@ div.avatarFrame{
 			justify-content: left;
 		}
 		.mainPart .leftMainPart .first h3{
-			flex:0 0 50px;
+			flex:0 0 10em;
+			text-align: left;
 			color: var(--add-color);
 			font-weight: bold;
 		}
@@ -349,7 +394,7 @@ div.avatarFrame{
 			border:none;
 		}
 		.mainPart .leftMainPart .first button img{
-			width:40px;
+			width:2.5em;
 		}
 		.mainPart .leftMainPart .first ul{
 			flex:0 0 300px;
@@ -360,7 +405,8 @@ div.avatarFrame{
 		.mainPart .leftMainPart .first ul li{
 			display: flex;
 			align-items: center;
-			padding:0.2rem;
+			padding:0.2em;
+			margin-bottom: 0.5em;
 		}
 		.mainPart .leftMainPart .first ul li img{
 			margin-right: 0.7rem;
@@ -391,10 +437,10 @@ div.avatarFrame{
 			display: flex;
 			flex-direction: column;
 			position:absolute;
-			top:50px;
-			left:50px;
-			width:100px;
-			height:100px;
+			top:4em;
+			left:3em;
+			width:7em;
+			height:7em;
 		}
 		.currentDay .month, .currentDay .day{
 			display: flex;
@@ -433,7 +479,7 @@ div.avatarFrame{
 			border:none;
 		}
 		.mainPart .leftMainPart .third button img{
-			width:40px;
+			width:2.5em;
 		}
 		.mainPart .leftMainPart .third ul{
 			flex:0 0 300px;
@@ -446,7 +492,7 @@ div.avatarFrame{
 			align-items: center;
 			padding:0.2rem;
 			margin-top: 0.6rem;
-			font-size: 1.3em;
+			font-size: 1.1em;
 		}
 
 	/* правая часть мейн мидла */
@@ -456,22 +502,22 @@ div.avatarFrame{
 		flex:1 1;
 	}
 	.mainPart .rightMainPart .innerRightBox{
-		margin-left:1.8em;
-		margin-bottom:1.8em;
+		margin-left:1.5em;
+		margin-bottom:1.5em;
 		padding:1.5rem 1.5rem;
 		border-radius: calc(0.2rem + 0.3vw);
 		background-color: var(--base-background-color);
 	}
 		/* первый правый бокс */
-		div.rightMainPart .upperRightBox{
-			padding-bottom: 0px !important;
+		.mainPart div.rightMainPart .upperRightBox{
+			padding-bottom: 0px;
 		}
 		.upperRightBox nav ul{
 			margin:0;
 			padding:0;
 			display: flex;
 			justify-items:start;
-
+			font-size: 1.1em;
 		}
 		.upperRightBox nav ul li{
 			display: inline-block;
@@ -481,8 +527,8 @@ div.avatarFrame{
 			justify-content: center;
 			align-items: center;
 			background-color:#32333d;
-			padding: 0.2em 0.8em;
-			margin-right:0.8em;
+			padding: 0.5em 1.2em;
+			margin-right:1.8em;
 			border-radius: 1em;
 			transition-property: background-color;
 			transition-duration: 0.2s;
@@ -499,8 +545,8 @@ div.avatarFrame{
 			content: '';
 			display:inline-block;
 			border-radius: 50%;
-			width:60px;
-			height:60px;
+			width:3.5em;
+			height:3.5em;
 			background-image: url(../images/avatar.jpg);
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -509,9 +555,12 @@ div.avatarFrame{
 		}
 		.upperRightBox > form input{
 			flex:1;
+			height:5em;
 			align-self: stretch;
 			background-color: transparent;
 			border-color: transparent;
+			color:var(--add-color);
+			font-size: 1rem;
 		}
 		.upperRightBox .optionalBar{
 			border-top: 1px solid rgba(221, 221, 241, 0.08);
@@ -528,11 +577,12 @@ div.avatarFrame{
 		.upperRightBox .optionalBar ul li button{
 			display: flex;
 			align-items: center;
-			margin-right: 5px;
+			margin-right: 0.8em;
 			color:var(--add-color);
+			font-size: 1.0em;
 		}
 		.upperRightBox .optionalBar ul li button img{
-			margin-right: 5px;
+			margin-right: 0.5em;
 		}
 		.upperRightBox .optionalBar form{
 			margin-left: auto;
@@ -540,19 +590,24 @@ div.avatarFrame{
 		.upperRightBox .optionalBar form button{
 			background-color: rgb(45, 127, 182);
 			border-radius: 0.3em;
-			padding:0.5em 1.3em;
+			padding:0.8em 2.2em;
+			font-size: 1rem;
 			color:white;
 			box-shadow: 0 0 17px rgba(127, 203, 253, 0.8);
 			text-shadow: 0 0 5px white;
 		}
+		/*Второй правый бокс*/
 		.lowerRightBox header{
 			display: flex;
+			align-items: center;
 		}
 		.lowerRightBox header figure{
-			padding:1.5em 0 0 0;
 			margin:0;
 			line-height: 0.2em;
 			text-align: left;
+			font-size: 1em;
+		}
+		.lowerRightBox header figure p{
 			font-size: 1em;
 		}
 		.lowerRightBox header figure p + p{
@@ -567,19 +622,19 @@ div.avatarFrame{
 			border:none;
 		}
 		.lowerRightBox header button img{
-			width: 40px;
+			width: 2.5em;
 		}
-		.lowerRightBox p{
-			margin-top: 1em;
+		.lowerRightBox > p{
+			margin-top: 2em;
 			text-align: left;
-			font-size: 0.8em;
+			font-size: 1em;
 		}
 		.lowerRightBox .photos{
-			height:20vh;
+			height:25vh;
 			display: grid;
 			background-color:var(--base-background-color);
 			grid-template: 1fr 1fr / 1fr 1fr;
-			gap:1em;
+			gap:0.7em;
 		}
 		.lowerRightBox .photos .neon1{
 			grid-column: 1/2;
@@ -614,17 +669,17 @@ div.avatarFrame{
 		.lowerRightBox ul{
 			display: flex;
 			padding:0;
-			margin:1em 0 0 0;
+			margin:1.8em 0 0 0;
 		}
 		.lowerRightBox ul button{
 			display: flex;	
 			margin-right: 1em;
-			font-size: 1.5em;		
+			font-size: 1.1em;		
 			color:var(--add-color);
 		}
 		.lowerRightBox ul button img{
-			width:28px;
-			padding-right: 5px;
+			width:0.9em;
+			padding-right: 0.4em;
 		}
 	
 /********************************************
@@ -639,14 +694,20 @@ section.rightSide{
 	overflow-x: hidden;
 	overflow-y: auto;
 	color: var(--add-color);
+
+	transform: translateX(0px);
+	transition-property: transform;
+	transition-duration: 0.4s;
 }
 section.rightSide header{
 	flex:1 1 100%;
 	display: flex;
 	flex-wrap: wrap;
-	padding:2em 0em 2em 3em;
+	margin-top: 0.5em;
+	padding:0em 1em 0 1.2em;
 	position: sticky;
 	top:0;
+	height: 4em;
 	background-color: var(--base-background-color);
 	box-shadow:0 15px 15px var(--base-background-color) ;
 }
@@ -654,33 +715,58 @@ section.rightSide header button{
 	justify-content: center;
 	align-items: center;
 	padding: 0;
-	margin-right: 3em;
-	flex:0 0 2em;
+	margin-right: 1.7em;
+	flex:0 0 1.4em;
 	color:var(--add-color);
 }
 section.rightSide header button img{
-	width:2em;
+	width:1.4em;
 }
 section.rightSide header button.name{
 	margin-left: auto;
 	margin-right: 1em;
-	flex:1 0 2em;
-	font-size: 1.5em;
+	font-size: 0.9em;
 	font-weight: 900;
 }
+section.rightSide header button.ava{
+	margin:0;
+	padding:0;
+}
+section.rightSide .upSideCrowdNav, section.rightSide .downSideCrowdNav{
+	padding-left: 2em;
+	margin-bottom: 2em;
+}
 section.rightSide h3{
-	margin-left: 2rem;
+	margin-left: 0;
 	margin-right: 0.5rem;
 	text-transform: uppercase;
 	font-size: 1.1em;
+}
+section.rightSide ul{
+	padding-left: 0;
 }
 section.rightSide ul li{
 	display: flex;
 	align-items: center;
 	margin:1em 0;
+	font-weight: 300;
+}
+section.rightSide .upSideCrowdNav ul li .miniAvatar{
+	display: block;
+	width:55px;
+	height:55px;
+	border-radius: 50%;
+	border:2px solid rgb(240, 169, 63);
+	background-image: url(../images/avatar.jpg);
+	background-position: center center;
+	background-size: cover;
+	margin: 0em 1em 0em 0em;
 }
 section.rightSide a{
 	color: var(--base-color);
+}
+section.rightSide .downSideCrowdNav{
+	margin-bottom: 3em;
 }
 .downSideCrowdNav a.name:after{
 	content: '';
@@ -692,9 +778,11 @@ section.rightSide a{
 	border-radius: 50%;
 }
 section.rightSide footer{
+	box-sizing: border-box;
+	width: 270px;
 	display: flex;
 	flex-wrap: wrap;
-	position: sticky;
+	position: fixed;
 	bottom:0;
 	padding:0.5em 1em;
 	border-top: 1px solid var(--add-color);
@@ -702,17 +790,51 @@ section.rightSide footer{
 }
 section.rightSide footer form{
 	display: flex;
-	margin-left: 2em;
+	margin-left: 0.8em;
 }
 section.rightSide footer form input{
 	border:none;
 	background-color: transparent;
 	color:var(--add-color);
 	padding-left: 1em;
+	width:70px;
 }
 section.rightSide footer button{
-	margin-left: 1em;
+	margin-left: 0.5em;
 }
 section.rightSide footer button.wheel-image{
 	margin-left: auto;
+}
+
+/*Для экрана до 1400*/
+@media (max-width:1400px){
+	.html{
+		position: relative;
+	}
+	section.rightSide{
+		position: absolute;
+		right:0;
+		width:250px;
+		transform: translateX(250px);
+	}
+}
+
+/*Для экрана до 1160*/
+@media (max-width:1270px){
+	
+}
+
+/*Для экрана до 992*/
+@media (max-width:992px){
+
+}
+
+/*Для экрана до 768*/
+@media (max-width:768px){
+
+}
+
+/*Для экрана до 576*/
+@media (max-width:576px){
+
 }

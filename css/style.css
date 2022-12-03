@@ -806,6 +806,10 @@ section.rightSide footer button.wheel-image{
 	margin-left: auto;
 }
 
+
+@media (hover:active) {
+	
+}
 /*Для экрана до 1400*/
 @media (max-width:1400px){
 	.html{

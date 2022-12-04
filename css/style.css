@@ -115,7 +115,7 @@ button{
 .pageWrapper section.leftSide{
 	flex:0 0 270px;
 	transition-property: flex;
-	transition-duration: 0.5s;
+	transition-duration: 0.3s;
 }
 .pageWrapper section.middleSide{
 	flex:1 1 10px;
@@ -153,6 +153,43 @@ section.leftSide div button img{
 	height:27px;
 	cursor: pointer;
 } 
+#isLeftExpanded:checked + section.leftSide{
+	flex:0 0 270px;
+}
+#isLeftExpanded:checked + section.leftSide div.burger{
+	display: none;
+}
+#isLeftExpanded:checked + section.leftSide header.leftLogo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top:0;
+	height:4em;
+	margin-top: 1em;
+	background-color: var(--base-background-color);
+	box-shadow:0 15px 15px var(--base-background-color) ;
+	transform: rotate(0deg);
+}
+#isLeftExpanded:checked + section.leftSide .leftNav{
+	display: block;
+}
+#isLeftExpanded:checked + section.leftSide .leftFooter{
+	display: block;
+}
+.close-btn-left{
+	display: none;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	background-color:rgba(226, 177, 238, 0.514); 
+	z-index: 1;
+}
+#isLeftExpanded:checked ~ label#close-btn-left .close-btn-left{
+	display: block;
+}
 .leftSide .leftNav{
 	padding-left: 3em;
 	margin-bottom: 5em;
@@ -970,6 +1007,9 @@ section.rightSide footer button.wheel-image{
 		display:flex;
 		align-items: center;
 		justify-content: center;
+
+		transition-property: transform;
+		transition-duration: 0.3s;
 	}
 	section.leftSide div.burger{
 		display: flex;

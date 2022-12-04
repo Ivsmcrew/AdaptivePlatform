@@ -16,10 +16,13 @@
         --------------LEFT PAGE-PART----------------
         --------------------------------------------
         --------------------------------------------> 
+        <input type="checkbox" id="isLeftExpanded" style="display: none;"/>
         <section data-simplebar class="leftSide">
             <div class="burger">
                 <button class="is-open-left">
-                    <img src="images/list.svg" alt="button to open left side part" name="is-open-left" aria-label="button to open left side part">
+                    <label for="isLeftExpanded" id="expand-left-btn">
+                        <img src="images/list.svg" alt="button to open left side part" name="is-open-left" aria-label="button to open left side part">
+                    </label>
                 </button>
             </div>
 
@@ -61,6 +64,9 @@
                 </address>
             </footer>
         </section>
+        <label for="isLeftExpanded" id="close-btn-left">
+            <div class="close-btn-left"></div>
+        </label>
 
         <!------------------------------------------
         --------------------------------------------

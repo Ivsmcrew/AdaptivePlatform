@@ -10,7 +10,6 @@
 </head>
 <body>
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-
     <div class="pageWrapper">
         <!------------------------------------------
         --------------------------------------------
@@ -18,6 +17,12 @@
         --------------------------------------------
         --------------------------------------------> 
         <section data-simplebar class="leftSide">
+            <div class="burger">
+                <button class="is-open-left">
+                    <img src="images/list.svg" alt="button to open left side part" name="is-open-left" aria-label="button to open left side part">
+                </button>
+            </div>
+
             <header class="leftLogo">
                 <h1><a href="#"><strong>ultranet</strong></a></h1>
             </header>
@@ -71,7 +76,7 @@
                         <input type="text" name="search" placeholder="Search" aria-label="Main search string">
                     </form>
                     <div>
-                        <button class="is-open-right"><img src="images/app-indicator.svg" alt="button to open right side part" name="is-open-right" aria-label="button to open right side part"></button>
+                        <button class="is-open-right"><label for="isexpanded" id="expand-btn"><img src="images/app-indicator.svg" alt="button to open right side part" name="is-open-right" aria-label="button to open right side part"></label></button>
                     </div>
                 </nav>
 
@@ -197,7 +202,9 @@
         -----------RIGHT PAGE-PART------------------
         --------------------------------------------
         -------------------------------------------->
-        <section data-simplebar class="rightSide">
+        
+        <input type="checkbox" id="isexpanded" style="display: none;"/>
+        <section data-simplebar class="rightSide expandable">
             <header class="instrumentBar"> 
                 <button class="mail"><img src="images/envelope.svg" alt="post picture"></button>       
                 <button class="ring"><img src="images/bell.svg" alt="notifications picture"></button>
@@ -260,6 +267,9 @@
                     <button><img src="images/plus.svg" alt="plus image"></button>
             </footer>
         </section>
+        <label for="isexpanded" id="close-btn">
+            <div class="close-btn"></div>
+        </label>
     </div>   
 </body>
 </html>

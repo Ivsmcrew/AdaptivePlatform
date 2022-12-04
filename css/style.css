@@ -114,6 +114,8 @@ button{
 }
 .pageWrapper section.leftSide{
 	flex:0 0 270px;
+	transition-property: flex;
+	transition-duration: 0.5s;
 }
 .pageWrapper section.middleSide{
 	flex:1 1 10px;
@@ -135,6 +137,22 @@ section.leftSide{
 	height:100%;
 	overflow-y: auto;
 }
+section.leftSide div.burger{
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top:0;
+	left:0;
+	background-color: #21233a;
+	height:46px;
+	width:100%;
+}
+section.leftSide div button img{
+	width:27px;
+	height:27px;
+	cursor: pointer;
+} 
 .leftSide .leftNav{
 	padding-left: 3em;
 	margin-bottom: 5em;
@@ -152,7 +170,8 @@ section.leftSide{
 	margin-top:3em;
 }
 section.leftSide a{
-	display:block;
+	display:flex;
+	align-items: center;
 	color: var(--add-color);
 	cursor: pointer;
 	transition-property: color;
@@ -265,7 +284,7 @@ section.middleSide main nav input{
 	padding-left: 4em
 }
 section.middleSide main nav div{
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	position: absolute;
@@ -281,6 +300,23 @@ section.middleSide main nav div button{
 }
 section.middleSide main nav div button img{
 	width:2em;
+	cursor: pointer;
+}
+#isexpanded:checked + section.expandable{
+	transform: translateX(0px);
+}
+.close-btn{
+	display: none;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	background-color:rgba(226, 177, 238, 0.514); 
+	z-index: 10000;
+}
+#isexpanded:checked ~ label .close-btn{
+	display: block;
 }
 section.middleSide main header.headerOfMiddleSide{
 	display:flex;
@@ -689,15 +725,12 @@ section.rightSide{
 	flex-wrap: wrap;
 	padding: 0px;
     background-color: var(--base-background-color);
-	z-index:99;
+	z-index:10001;
 	height:100%;
 	overflow-x: hidden;
 	overflow-y: auto;
 	color: var(--add-color);
-
 	transform: translateX(0px);
-	transition-property: transform;
-	transition-duration: 0.4s;
 }
 section.rightSide header{
 	flex:1 1 100%;
@@ -807,10 +840,7 @@ section.rightSide footer button.wheel-image{
 }
 
 
-@media (hover:active) {
-	
-}
-/*Для экрана до 1400*/
+/*Для экрана до 1400(скрываем правый сайд бар)*/
 @media (max-width:1400px){
 	.html{
 		position: relative;
@@ -820,17 +850,136 @@ section.rightSide footer button.wheel-image{
 		right:0;
 		width:250px;
 		transform: translateX(250px);
+		transition-property: transform;
+		transition-duration: 0.4s;
+	}
+	section.middleSide main nav div{
+		display: flex;
 	}
 }
 
 /*Для экрана до 1160*/
-@media (max-width:1270px){
-	
+@media (max-width:1160px){
+	section.leftSide header.leftLogo h1{
+		font-size: 1.4em;
+	}
+	.leftSide .leftNav ul li + li{
+		margin-top: 0.9em;
+	}
+	section.leftSide a{
+		font-size: 1.2em;
+	}
+	.leftNav h3{
+		margin-right: 0.5rem;
+		text-transform: uppercase;
+		font-size: 1.3em;
+	}
+	section.middleSide main header.headerOfMiddleSide{
+		height: 18em;
+		margin-bottom: 1.2em;
+		box-shadow: 0 0 20px 40px rgba(221, 221, 241, 0.08) inset;
+	}
+	section.middleSide main header.headerOfMiddleSide p{
+		font-size: 1.9em;
+	}
+	section.middleSide main header.headerOfMiddleSide p span{
+		bottom: 7rem;
+		left:16rem;
+	}
+	header.headerOfMiddleSide nav ul li a{
+		height:100%;
+		font-size: 1.1em;
+		box-sizing: border-box;
+	}
+	div.avatarFrame{
+		bottom:2.6em;
+		left:3em;
+		height: 10em;
+		width: 10em;
+		border:4px solid var(--base-background-color);
+		margin:2px;
+	}
+	/*левая часть мейн мидла*/
+	.mainPart .leftMainPart .innerLeftBox{
+		margin-bottom:1.4em;
+		padding:0.6em 1.3em 1.3em 1.3em;
+	}
+	/* правая часть мейн мидла */
+	.mainPart .rightMainPart .innerRightBox{
+		margin-left:1.3em;
+		margin-bottom:1.3em;
+		padding:1.3rem 1.3rem;
+	}
+		/* первый правый бокс */
+		.upperRightBox form{
+			display: flex;
+			align-items: center;
+			margin: 1em 0;
+		}
+		.upperRightBox > form input{
+			font-size: 1.1em;
+		}
+		.upperRightBox .optionalBar ul li button{
+			margin-right: 0.5em;
+			font-size: 1.1em;
+		}
+		.upperRightBox .optionalBar ul li button img{
+			margin-right: 0.5em;
+		}
+		.upperRightBox .optionalBar form{
+			margin-left: auto;
+		}
+		.upperRightBox .optionalBar form button{
+			background-color: rgb(45, 127, 182);
+			border-radius: 0.3em;
+			padding:0.8em 2.2em;
+			font-size: 1rem;
+			color:white;
+			box-shadow: 0 0 17px rgba(127, 203, 253, 0.8);
+			text-shadow: 0 0 5px white;
+		}
+		/*Второй правый бокс*/
+		.lowerRightBox header figure{
+			font-size: 1.1em;
+		}
+		.lowerRightBox header figure p{
+			font-size: 1em;
+		}
+		.lowerRightBox header figure p + p{
+			font-size: 0.9em;
+		}
+		.lowerRightBox > p{
+			font-size: 1.1em;
+		}
+		.lowerRightBox ul{
+			margin:1.6em 0 0 0;
+		}
 }
 
-/*Для экрана до 992*/
-@media (max-width:992px){
-
+/*Для экрана до 996(скрываем левый сайд бар)*/
+@media (max-width:996px){
+	.pageWrapper section.leftSide{
+		flex:0 0 50px;
+	}
+	section.leftSide header.leftLogo{
+		position:absolute;
+		transform: rotate(-90deg);
+		top:10em;
+		left:0;
+		width:100%;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+	}
+	section.leftSide div.burger{
+		display: flex;
+	}
+	.leftSide .leftNav{
+		display: none;
+	}
+	.leftSide .leftFooter{
+		display: none;
+	}
 }
 
 /*Для экрана до 768*/

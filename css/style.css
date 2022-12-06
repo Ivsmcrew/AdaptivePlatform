@@ -253,7 +253,7 @@ section.leftSide header.leftLogo h1 a:hover{
 .leftSide .leftFooter{
 	box-sizing: border-box;
 	position: fixed;
-	width: 270px;
+	width: 100%;
 	bottom: 0;
 	padding:0.2em 1em 0 1.5em;
 	background-color: var(--base-background-color);
@@ -365,7 +365,7 @@ section.middleSide main header.headerOfMiddleSide{
 	background-repeat: no-repeat;
 	background-position: center center;
 	margin: calc(0.2rem + 0.8vw);
-	margin-bottom: 1.8em;
+	/* margin-bottom: 1.8em; */
 	border-radius: calc(0.2rem + 0.3vw);
 	box-shadow: 0 0 30px 50px rgba(221, 221, 241, 0.08) inset;
 }
@@ -1023,7 +1023,7 @@ section.rightSide footer button.wheel-image{
 		display: none;
 	}
 	.leftSide .leftFooter{
-		display: none;
+		display: none; 
 	}
 	section.leftSide a{
 		font-size: 1.5em;

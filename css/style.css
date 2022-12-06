@@ -1225,5 +1225,10 @@ section.rightSide footer button.wheel-image{
 
 /*Для экрана до 576*/
 @media (max-width:576px){
-
+	.headerOfMiddleSide nav.middleNav ul li.no-display{
+		display: none;
+	}
+	header.headerOfMiddleSide nav ul{
+		width:30em;
+	}
 }

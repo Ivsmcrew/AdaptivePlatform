@@ -253,7 +253,7 @@ section.leftSide header.leftLogo h1 a:hover{
 .leftSide .leftFooter{
 	box-sizing: border-box;
 	position: fixed;
-	width: 100%;
+	width: 270px;
 	bottom: 0;
 	padding:0.2em 1em 0 1.5em;
 	background-color: var(--base-background-color);

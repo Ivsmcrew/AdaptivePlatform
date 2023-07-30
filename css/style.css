@@ -303,12 +303,12 @@ section.middleSide main{
 	overflow-x: hidden;
 	overflow-y: auto;
 }
-section.middleSide main nav.searchString{
+.searchString{
 	position: sticky;
 	top:0;
 	z-index: 3;
 }
-section.middleSide main nav input{
+.searchString input{
 	height:3em;
 	width: 100%;
 	color: var(--base-color);
@@ -320,7 +320,7 @@ section.middleSide main nav input{
 	border-left-color: var(--add-color);
 	padding-left: 4em
 }
-section.middleSide main nav div{
+.isOpenRight{
 	display: none;
 	align-items: center;
 	justify-content: center;
@@ -331,11 +331,11 @@ section.middleSide main nav div{
 	height:100%;
 	width:5em;
 }
-section.middleSide main nav div button{
+.isOpenRight button{
 	height:100%;
 	width: 100%;
 }
-section.middleSide main nav div button img{
+.isOpenRight button img{
 	width:2em;
 	cursor: pointer;
 }
@@ -355,7 +355,7 @@ section.middleSide main nav div button img{
 #isexpanded:checked ~ label .close-btn{
 	display: block;
 }
-section.middleSide main header.headerOfMiddleSide{
+.headerOfMiddleSide{
 	display:flex;
 	flex-direction: column;
 	position: relative;
@@ -369,18 +369,18 @@ section.middleSide main header.headerOfMiddleSide{
 	border-radius: calc(0.2rem + 0.3vw);
 	box-shadow: 0 0 30px 50px rgba(221, 221, 241, 0.08) inset;
 }
-section.middleSide main header.headerOfMiddleSide p{
+.headerOfMiddleSide p{
 	flex:3;
 	font-size: 1.8em;
 	font-weight: bolder;
 }
-section.middleSide main header.headerOfMiddleSide p span{
+.headerOfMiddleSide p span{
 	display: block;
 	position: absolute;
 	bottom: 8rem;
 	left:17rem;
 }
-section.middleSide main header.headerOfMiddleSide nav{
+.headerOfMiddleSide nav{
 	flex:1;
 	background-color: var(--base-background-color);
 	margin:0;
@@ -388,7 +388,7 @@ section.middleSide main header.headerOfMiddleSide nav{
 	border-bottom-left-radius: calc(0.2em + 0.3vw);
 	border-bottom-right-radius: calc(0.2em + 0.3vw);
 }
-header.headerOfMiddleSide nav ul{
+.headerOfMiddleSide nav ul{
 	display: flex;
 	height:100%;
 	padding: 0;
@@ -396,11 +396,11 @@ header.headerOfMiddleSide nav ul{
 	width:30em;
 	justify-content: space-around;
 }
-header.headerOfMiddleSide nav ul li{
+.headerOfMiddleSide nav ul li{
 	text-align: center;
 	width:100%;
 }
-header.headerOfMiddleSide nav ul li a{
+.headerOfMiddleSide nav ul li a{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -410,7 +410,7 @@ header.headerOfMiddleSide nav ul li a{
 	transition-property: background-color, border-bottom, color;
 	transition-duration: 0.4s;
 }
-header.headerOfMiddleSide nav ul li a:hover{
+.headerOfMiddleSide nav ul li a:hover{
 	background-color: rgba(99, 99, 117, 0.2);
 	border-bottom: 4px solid rgb(118, 194, 245);
 }
@@ -895,7 +895,7 @@ section.rightSide footer button.wheel-image{
 		transition-property: transform;
 		transition-duration: 0.4s;
 	}
-	section.middleSide main nav div{
+	.isOpenRight{
 		display: flex;
 	}
 }
@@ -916,24 +916,24 @@ section.rightSide footer button.wheel-image{
 		text-transform: uppercase;
 		font-size: 1.3em;
 	}
-	section.middleSide main header.headerOfMiddleSide{
+	.headerOfMiddleSide{
 		height: 18em;
 		margin-bottom: 1.2em;
 		box-shadow: 0 0 20px 40px rgba(221, 221, 241, 0.08) inset;
 	}
-	section.middleSide main header.headerOfMiddleSide p{
+	.headerOfMiddleSide p{
 		font-size: 1.9em;
 	}
-	section.middleSide main header.headerOfMiddleSide p span{
+	.headerOfMiddleSide p span{
 		bottom: 7rem;
 		left:16rem;
 	}
-	header.headerOfMiddleSide nav ul li a{
+	.headerOfMiddleSide nav ul li a{
 		height:100%;
 		font-size: 1.1em;
 		box-sizing: border-box;
 	}
-	div.avatarFrame{
+	.avatarFrame{
 		bottom:2.6em;
 		left:3em;
 		height: 10em;
@@ -1033,22 +1033,22 @@ section.rightSide footer button.wheel-image{
 		text-transform: uppercase;
 		font-size: 1.7em;
 	}
-	section.middleSide main header.headerOfMiddleSide p{
+	.headerOfMiddleSide p{
 		font-size: 2.2em;
 	}
-	section.middleSide main header.headerOfMiddleSide p span{
+	.headerOfMiddleSide p span{
 		bottom: 7rem;
 		left:16rem;
 	}
-	section.middleSide main header.headerOfMiddleSide nav{
+	.headerOfMiddleSide nav{
 		flex:1.3;
 		margin:0;
 		padding:0 0 0 20%;
 	}
-	header.headerOfMiddleSide nav ul{
+	.headerOfMiddleSide nav ul{
 		width:35em;
 	}
-	header.headerOfMiddleSide nav ul li a{
+	.headerOfMiddleSide nav ul li a{
 		height:100%;
 		font-size: 1.3em;
 		box-sizing: border-box;
@@ -1183,15 +1183,15 @@ section.rightSide footer button.wheel-image{
 	.mainPart{
 		flex-wrap: wrap;
 	}
-	section.middleSide main header.headerOfMiddleSide{
+	.headerOfMiddleSide{
 		height: 25em;
 		margin-bottom: 1.8em;
 	}
-	section.middleSide main header.headerOfMiddleSide p{
+	.headerOfMiddleSide p{
 		flex:3;
 		font-size: 2.7em;
 	}
-	section.middleSide main header.headerOfMiddleSide p span{
+	.headerOfMiddleSide p span{
 		bottom: 7.5rem;
 		left:32%;
 	}

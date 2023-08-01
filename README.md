@@ -15,7 +15,7 @@ Despite the entire mess is the code, this project gave me experience at the foll
 
 It was my start point in the world of frontend
 
-*PS: The only problem that I could not solve is the integration of a custom scroll. When integrating on the page, the FLEX property broke without a clear reason, so I had to refuse this idea (the last commit in the Master branch)*
+*PS: The only problem that I could not solve is the integration of a custom scroll. When integrating on the page, the FLEX property broke without a clear reason, so I had to refuse this idea (the last commit in the master branch)*
 	
 <sub> *Screenshot of the landing:* </sub>
 ![Screenshot of the page](./images/adaptive-platform.PNG)

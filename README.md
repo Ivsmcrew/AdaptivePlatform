@@ -6,9 +6,9 @@ Only rude and true(no) HTML and CSS. The whole CSS is in one file, which further
 
 Despite the entire mess is the code, this project gave me experience at the following points: 
 
-- what are blocks, articles, headers, footers, etc., 
-- storage of a state without JS (only checkbox state), 
-- adaptive design with media queries, 
+- what are blocks, articles, headers, footers, etc
+- storage of a state without JS (only checkbox state)
+- adaptive design with media queries
 - adding custom fonts
 - handling with svg
 - deploying on the GitHub
